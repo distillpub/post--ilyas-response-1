@@ -1,8 +1,8 @@
-import VisualTOC                      from './diagrams/VisualTOC.html';
+import VisualTOC from "./diagrams/VisualTOC.html";
 
 // eagerly initialize vtoc  as it's above the fold
-const tocNav = document.getElementById('vtoc');
-const visualTOC = new VisualTOC({target: tocNav});
+const tocNav = document.getElementById("vtoc");
+const visualTOC = new VisualTOC({ target: tocNav });
 
 // lazily initialize any diagram below the fold. E.G:
 // {
