@@ -60,22 +60,29 @@ a.figure-number::before {
 }
 
 #rebuttal,
-#response-info {
+.response-info {
 	margin: 1em 0;
-	background-color: hsl(128, 50%, 97%);
-	border-left: solid hsl(129, 50%, 25%) 3px;
+	background-color: hsl(228, 50%, 97%);
+	border-left: solid hsl(229, 50%, 25%) 3px;
 	padding: 1em;
-	/* border-radius: 0.25em; */
 }
 
-#rebuttal .rebuttal-info {
+#rebuttal,
+.rebuttal-info {
 	color: hsl(129, 50%, 15%);
-	font-style: italic;
-	/* background-color: hsl(128, 50%, 90%); */
-	/* border: 1px solid hsl(128, 25%, 85%); */
-	/* padding: 0.5em; */
+	background-color: hsl(128, 50%, 97%);
+	border-left: solid hsl(128, 50%, 25%) 3px;
 	margin-bottom: 0.5em;
-	/* border-radius: 0.25em; */
+}
+
+#rebuttal figure {
+	background: white;
+	padding: 1em;
+	border-radius: 1em;
+}
+
+#rebuttal p:last-of-type {
+	margin-bottom: 0;
 }
 
     </style>
@@ -122,14 +129,11 @@ a.figure-number::before {
 
     <d-article>
 
-        <section id="response-info"><em>
-                This article is part of a collection of responses to Ilyas et al. <d-cite key="ilyas2019adversarial">
-                </d-cite> paper "Adversarial
-                examples are not bugs, they are features". You can learn more about this process in this editorial
-                explanation. The author's rebuttal to this response is reproduced in context at the end of this article.
-                If
-                you want
-                to cite the rebuttal, please cite the linked collection of response rebuttals.</em>
+        <section class="response-info">
+            This article is part of a discussion of Ilyas et al. <d-cite key="ilyas2019adversarial">
+            </d-cite> paper <em>"Adversarial
+                examples are not bugs, they are features"</em>. You can learn more in the main <a
+                href="/2019/advex-bugs-responses/">discussion article</a>.</em>
         </section>
 
         <p>
@@ -232,10 +236,12 @@ a.figure-number::before {
 
         </p>
 
-        <section id="rebuttal">
+        <div class="response-info">
+            Ilyas, et. al.'s rebuttal is shown here in context. To cite this rebuttal, please cite their
+            <a href="/2019/advex-bugs-responses/rebuttal/#citation">collection of response rebuttals</a>.
+        </div>
 
-            <div class="rebuttal-info">The original paper's authors' rebuttal is shown here in context. If you want
-                to cite this rebuttal, please cite the linked collection of response rebuttals.</div>
+        <section id="rebuttal">
 
             <p><b>Response Summary</b>: The demonstration of models that learn from
                 high-frequency components of the data is interesting and nicely aligns with our
@@ -246,30 +252,34 @@ a.figure-number::before {
                 models need to be robust to a much broader set of perturbations&mdash;expanding the
                 set of relevant perturbations will help identify even more non-robust features
                 and further distill the useful features we actually want our models to rely on.
-
             </p>
 
             <p><b>Response</b>: The fact that models can learn to classify correctly based
                 purely on the high-frequency component of the training set is neat! This nicely
-                complements one of our <a href="#takeaway1">takeaways</a>: models will rely on
-                useful features even if these features appear incomprehensible to humans. </p>
+                complements one of our <a href="/2019/advex-bugs-responses/rebuttal/#takeaway1">takeaways</a>: models
+                will rely on useful features even if these features appear incomprehensible to humans.</p>
 
             <p> Also, while non-robustness to noise can be an indicator of models using
                 non-robust useful features, this is not how the phenomenon was predominantly viewed.
                 More often than not, the brittleness of ML models to noise was instead regarded
                 as an innate shortcoming of the models, e.g., due to poor margins. (This view is
-                even more prevalent in the adversarial robustness community). Thus, it was often
+                even more prevalent in the adversarial robustness community.) Thus, it was often
                 expected that progress towards "better"/”bug-free” models will lead to them
-                being more robust to noise and adversarial examples. </p>
+                being more robust to noise and adversarial examples.</p>
 
-            <p> Finally, we fully agree that the set of \(L_p\)-bounded perturbations is a very
+            <p> Finally, we fully agree that the set of $L_p$-bounded perturbations is a very
                 small subset of the perturbations we want our models to be robust to. Note,
                 however, that the focus of our work is human-alignment&mdash;to that end, we
                 demonstrate that models rely on features sensitive to patterns that are
                 imperceptible to humans. Thus, the existence of other families of
                 incomprehensible but useful features would provide even more support for our
-                thesis—identifying and characterizing such features is an interesting area for
-                future research.
+                thesis&mdash;identifying and characterizing such features is an interesting area for
+                future research.</p>
+        </section>
+
+        <section class="response-info">
+            You can find more responses in the main <a href="/2019/advex-bugs-responses/">discussion
+                article</a>.
         </section>
 
     </d-article>
